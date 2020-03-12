@@ -1,0 +1,10 @@
+QUEUE_CONFIG = {
+    'host': 'mtt.server',
+    'user': 'usuario',
+    'password': 'senha',
+    'port': 8883
+}
+VARNISH_CONFIG = {
+    'server': '127.0.0.1:6082',
+    'secret_file': '/etc/varnish/secret'
+}
