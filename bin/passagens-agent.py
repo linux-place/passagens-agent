@@ -50,8 +50,8 @@ class PiManager(Service):
 
             # print '%s: %s' % (m, m.get_body())
             manager.run('ban', 'req.url == /', secret=varnishsecret)
-            manager.run('ban.url', banurl, secret=varnishsecret)
             manager.run('ban', 'req.url == %s' % banurl, secret=varnishsecret)
+            manager.run('ban', 'req.url ~ %s' % banurl, secret=varnishsecret)
             self.logger.info("Purged page {0}".format(banurl))
             self.logger.info(msg.topic + " " + str(msg.payload))
 
